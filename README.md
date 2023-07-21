@@ -18,7 +18,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Installation
 
-Install my-project with npm
+
 
 ```bash
   git clone https://github.com/pp0p/login-system
