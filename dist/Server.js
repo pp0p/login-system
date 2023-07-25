@@ -8,6 +8,7 @@ const database_1 = __importDefault(require("./Config/database"));
 const config_1 = require("./Config/config");
 const Router_1 = __importDefault(require("./Router/Router"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const cors_1 = __importDefault(require("cors"));
 class Server {
     constructor() {
         this.port = config_1.config.port;
@@ -28,6 +29,7 @@ class Server {
         this.app.use(express_1.default.json());
         this.app.use("/public", express_1.default.static("public"));
         this.app.use(express_1.default.urlencoded({ extended: true }));
+        this.app.use((0, cors_1.default)(config_1.config.corsOption));
         this.app.use((0, cookie_parser_1.default)());
     }
     listen() {
